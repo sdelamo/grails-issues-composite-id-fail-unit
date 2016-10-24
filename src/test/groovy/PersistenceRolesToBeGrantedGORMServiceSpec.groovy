@@ -1,10 +1,12 @@
-import grails.test.mixin.Mock
 import grails.test.mixin.TestFor
-import spock.lang.Ignore
+import grails.test.mixin.TestMixin
+import grails.test.mixin.gorm.Domain
+import grails.test.mixin.hibernate.HibernateTestMixin
 import spock.lang.Specification
 
 @TestFor(PersistenceRolesToBeGrantedGORMService)
-@Mock([PersistenceRolesToBeGranted])
+@Domain(PersistenceRolesToBeGranted)
+@TestMixin(HibernateTestMixin)
 class PersistenceRolesToBeGrantedGORMServiceSpec extends Specification {
 
     def "test findAllAuthorityByEmail"() {
